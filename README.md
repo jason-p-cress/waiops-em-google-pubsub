@@ -30,7 +30,12 @@ The installation script supports RHEL 7 and RHEL 8. For any other Operating Syst
 instructions below.
 
 You must run this on a server where the OMNIbus message bus probe resides, and set the OMNIHOME environment variable to the installation
-path of omnibus. 
+path of omnibus. You must run this as the user which installed the Event Manager components (e.g. 'ncoadmin')
+
+In order for the script to install logstash and its plugins, the user must be able to sudo to be able to add the logstash yum repo to 
+the system and to be able to install the packages. If the Event Manager user does not have the ability to 'sudo', then install logstash
+and the Google Pub/Sub plugin separately as an admin user, and skip the installation of Logstash.
+
 
 Perform the following steps to clone the repo and install the package:
 
