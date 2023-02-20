@@ -1,0 +1,53 @@
+########################################################################
+#
+#       Licensed Materials - Property of IBM
+#       
+#       
+#       
+#       (C) Copyright IBM Corp. 2015, 2021. All Rights Reserved
+#       
+#       US Government Users Restricted Rights - Use, duplication
+#       or disclosure restricted by GSA ADP Schedule Contract
+#       with IBM Corp.
+#
+#
+#######################################################################
+
+if( match( @Manager, "ProbeWatch" ) )
+{
+	switch(@Summary)
+	{
+	case "Running ...":
+			@Severity = 1
+			@AlertGroup = "probestat"
+			@Type = 2
+	case "Going Down ...":
+			@Severity = 5
+			@AlertGroup = "probestat"
+			@Type = 1
+	case "Start resynchronization" | "Finish resynchronization" | "Resynch Completed" :
+			@Severity = 2
+			@AlertGroup = "probestat"
+			@Type = 13
+	case "Connection to source lost":
+			@Severity = 5
+			@AlertGroup = "probestat"
+			@Type = 1	
+	default:
+			@Severity = 1
+	}
+	@AlertKey = @Agent
+	@Summary = @Agent + " probe on " + @Node + ": " + @Summary
+}
+else
+{
+
+	details($*)
+	@Location = $message
+	@Summary = $(json.message)
+	@Identifier = @Summary
+	@Severity = 4
+	@Type = 1
+		
+}
+    

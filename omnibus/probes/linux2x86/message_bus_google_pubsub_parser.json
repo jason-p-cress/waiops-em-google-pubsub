@@ -1,0 +1,14 @@
+{
+  "eventSources" : [ {
+    "endpoint" : "/<-MESSAGE_BUS_ENDPOINT->",
+    "name" : "GooglePubSubParser",
+    "config" : {
+      "dataToRecord" : [ ],
+      "messagePayload" : "json",
+      "messageHeader" : "",
+      "jsonNestedPayload" : "json",
+      "jsonNestedHeader" : "",
+      "messageDepth" : 4
+    }
+  } ]
+}
