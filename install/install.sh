@@ -31,7 +31,7 @@ if [ $logstashInstall -eq 1 ]; then
    sudo rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch
    sudo cp logstash8.repo /etc/yum.repos.d/logstash8.repo
    sudo yum install logstash
-   /usr/share/logstash/bin/logstash-plugin install logstash-input-google_pubsub
+   sudo /usr/share/logstash/bin/logstash-plugin install logstash-input-google_pubsub
 fi
 
 
