@@ -35,7 +35,7 @@ path of omnibus.
 Perform the following steps to clone the repo and install the package:
 
 
-- git clone https://github.ibm.com/jcress/waiops-em-google-pubsub.git
+- git clone https://github.com/jason-p-cress/waiops-em-google-pubsub.git
 - cd waiops-em-google-pubsub/install
 - ./install.sh
 
@@ -64,7 +64,7 @@ message_bus_google_pubsub.props:
 	Server: The name of your Object Server (e.g. NCOMS or AGG_V)
 	Port: The TCP port that the Message Bus probe will listen to for alert POSTs
 
-logstash_google_pubsub.conf:
+logstash-google-pubsub.conf:
 
         project_id=>"<-YOUR_GC_PROJECT_ID->" (your google cloud project id should be between the quotes)
         topic=>"<-YOUR_GC_PUBSUB_TOPIC->" (your topic name should be entered between the quotes)
